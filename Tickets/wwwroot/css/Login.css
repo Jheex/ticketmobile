@@ -1,0 +1,118 @@
+/* Reset simples */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo com gradiente suave */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #5a02de, #1a1a1a);
+    color: #333;
+}
+
+/* Card central */
+.login-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    width: 350px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Título */
+.login-card h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #5a02de;
+}
+
+/* Labels */
+.login-card label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+/* Inputs */
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #5a02de;
+    box-shadow: 0 0 6px rgba(90, 2, 222, 0.4);
+}
+
+/* Checkbox */
+.login-card .form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Botão */
+.login-card button {
+    background: #5a02de;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: #4801b3; /* roxo mais escuro */
+    transform: translateY(-2px);
+}
+
+/* Links */
+.login-card a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #5a02de;
+    transition: color 0.3s ease;
+}
+
+.login-card a:hover {
+    color: #4801b3; /* mesmo tom escuro do botão hover */
+    text-decoration: underline;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .login-card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
