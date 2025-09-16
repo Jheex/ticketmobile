@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using tickets.Data;
+using System.Security.Claims;
 using tickets.ViewModels;
 
 namespace tickets.Controllers
@@ -13,27 +15,42 @@ namespace tickets.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
-
-            var user = FakeUserStore.ValidateUser(model.Email, model.Password);
-            if (user != null)
+            if (ModelState.IsValid)
             {
-                // Para teste, armazenamos o usuário no TempData (não seguro)
-                TempData["User"] = user.FullName;
-                return RedirectToAction("Index", "Home");
+                // Validação fixa (sem banco)
+                if (model.Email == "teste@teste.com" && model.Password == "123")
+                {
+                // login bem-sucedido
+
+
+                    // Cria claims do usuário
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, model.Email)
+                    };
+
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+
+                    // Faz login via cookie
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "Usuário ou senha inválidos.");
             }
 
-            ModelState.AddModelError("", "Email ou senha inválidos");
             return View(model);
         }
 
-        [HttpPost]
-        public IActionResult Logout()
+        [HttpGet]
+        public async Task<IActionResult> Logout()
         {
-            TempData.Remove("User");
-            return RedirectToAction("Login");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
         }
     }
 }

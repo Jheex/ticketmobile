@@ -4,11 +4,10 @@ namespace tickets.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Digite o usuário")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Digite a senha")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
