@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\tickets\\Tickets.csproj": {}
+    "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\Tickets\\Tickets.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\tickets\\Tickets.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\Tickets\\Tickets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\tickets\\Tickets.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\Tickets\\Tickets.csproj",
         "projectName": "Tickets",
-        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\tickets\\Tickets.csproj",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\Tickets\\Tickets.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\tickets\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Área de Trabalho\\ticketmobile\\Tickets\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"

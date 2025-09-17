@@ -96,4 +96,5 @@ C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\tickets\obj\Debug\net9.
 C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\tickets\obj\Debug\net9.0\Tickets.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\tickets\obj\Debug\net9.0\ref\Tickets.dll
 C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\tickets\obj\Debug\net9.0\compressed\tbmceo9c8z-kmx8ge5722.gz
-C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\tickets\obj\Debug\net9.0\compressed\393q59y5mh-5y18609epi.gz
+C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\Tickets\obj\Debug\net9.0\compressed\393q59y5mh-dxewgg6vzp.gz
+C:\Users\Usuario\OneDrive\Área de Trabalho\ticketmobile\Tickets\obj\Debug\net9.0\compressed\3psibernns-isnol9vklz.gz
