@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicketMobile Dashboard</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Chamados</a>
+        <a href="#">Usuários</a>
+        <a href="#">Configurações</a>
+        <a href="#">Sair</a>
+    </div>
+
+        <h2>Dashboard</h2>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card"><h3>Tickets Abertos</h3><p>10</p></div>
+            <div class="card"><h3>Tickets Pendentes</h3><p>7</p></div>
+            <div class="card"><h3>Tickets Concluídos</h3><p>25</p></div>
+            <div class="card"><h3>Total Chamados</h3><p>42</p></div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart">
+            <canvas id="ticketPieChart"></canvas>
+        </div>
+
+        <!-- Tickets List -->
+        <div class="ticket-list">
+            <h3>Últimos Chamados</h3>
+            <div class="ticket-item"><span>Erro no login</span><span class="status aberto">Aberto</span></div>
+            <div class="ticket-item"><span>Atualização do sistema</span><span class="status fechado">Fechado</span></div>
+            <div class="ticket-item"><span>Solicitação de backup</span><span class="status pendente">Pendente</span></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Gráfico de pizza
+        const ctx = document.getElementById('ticketPieChart').getContext('2d');
+        const ticketPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Aberto', 'Fechado', 'Pendente'],
+                datasets: [{
+                    data: [10, 25, 7],
+                    backgroundColor: ['#ef4444','#10b981','#f59e0b'],
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        // Toggle Sidebar
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.querySelector('.main-content');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shift'); // empurra o conteúdo
+        });
+    </script>
+
+</body>
+</html>
