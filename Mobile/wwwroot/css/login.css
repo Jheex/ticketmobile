@@ -1,0 +1,174 @@
+:root {
+    /* Paleta de cores */
+    --color-primary: #8A2BE2;
+    --color-primary-dark: #6A1FB6;
+    --color-primary-light: #A565EF;
+    --color-gradient-start: #1e1141;
+    --color-gradient-end: #0a0519;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E0E0E0;
+    --color-bg-card: #2A2344; /* Sólido, sem transparência */
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-input-bg: #3A2D5A; /* Fundo do input sólido */
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Corpo da página e animação do fundo */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita qualquer rolagem */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    background-size: 400% 400%;
+    animation: backgroundShift 20s ease infinite;
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    background-size: 400% 400%;
+    animation: backgroundShift 20s ease infinite;
+    color: var(--color-text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Partículas de fundo */
+body::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
+                radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+    background-size: 20% 20%;
+    background-position: 0 0, 50% 50%;
+    animation: particleAnimation 100s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes particleAnimation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Container de login */
+.login-container {
+    width: 350px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Títulos */
+.login-container h2 {
+    margin-bottom: 10px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.login-subtitle {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.login-container input {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: var(--color-input-bg);
+    color: var(--color-text-primary);
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.3s;
+}
+
+.login-container input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.8;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.6), 0 0 0 3px rgba(138, 43, 226, 0.25);
+}
+
+/* Botão */
+.btn-primary {
+    width: 100%;
+    height: 45px;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6), 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+/* Mensagem de erro */
+.erro {
+    background-color: rgba(240, 68, 56, 0.85);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Texto de validação */
+.text-error {
+    font-size: 13px;
+    color: #F04438;
+    margin-top: 3px;
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 24px;
+    }
+}
+

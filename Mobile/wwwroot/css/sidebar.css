@@ -1,0 +1,117 @@
+:root {
+    --color-bg-sidebar: #2A2344;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E0E0E0;
+    --color-primary-light: #A565EF;
+}
+
+/* Sidebar inicialmente escondida */
+.sidebar {
+    width: 0;
+    background-color: var(--color-bg-sidebar);
+    color: var(--color-text-secondary);
+    padding: 20px 0;
+    overflow: hidden;
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lista de itens da sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0 80px 0; /* espaço para o perfil */
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-primary);
+}
+
+/* Sidebar ativa */
+.sidebar.active {
+    width: 220px;
+    padding: 20px;
+}
+
+.sidebar.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Sidebar perfil fixo no rodapé */
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-primary);
+    transition: all 0.3s;
+}
+
+.sidebar-footer i {
+    font-size: 28px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-footer span {
+    font-weight: 600;
+}
+
+/* Quando a sidebar está recolhida */
+.sidebar.active .sidebar-footer span {
+    display: none;
+}
+
+.sidebar.active .sidebar-footer {
+    left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        padding: 20px 0;
+    }
+
+    .sidebar.active {
+        width: 180px;
+    }
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 60px; /* antes era 20px, agora sobe 40px */
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-primary);
+    transition: all 0.3s;
+}

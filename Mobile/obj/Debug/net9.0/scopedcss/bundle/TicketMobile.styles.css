@@ -1,0 +1,107 @@
+/* _content/TicketMobile/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-2x5laj90is] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-2x5laj90is] {
+  color: #0077cc;
+}
+
+.btn-primary[b-2x5laj90is] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-2x5laj90is], .nav-pills .show > .nav-link[b-2x5laj90is] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-2x5laj90is] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-2x5laj90is] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-2x5laj90is] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-2x5laj90is] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-2x5laj90is] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2A2344; /* cor sólida do header/cards */
+    color: #E0E0E0;             /* texto secundário */
+    text-align: center;          /* centraliza horizontalmente */
+    padding: 12px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+
+.app-header[b-2x5laj90is] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #2A2344; /* fundo sólido do header */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.header-left[b-2x5laj90is], .header-center[b-2x5laj90is], .header-right[b-2x5laj90is] {
+    display: flex;
+    align-items: center;
+}
+
+.header-center h1[b-2x5laj90is] {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btn-hamburger[b-2x5laj90is] {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+    padding: 0;
+}
+
+.btn-hamburger span[b-2x5laj90is] {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.profile-icon i[b-2x5laj90is] {
+    font-size: 28px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
